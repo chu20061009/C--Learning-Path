@@ -1,0 +1,27 @@
+#include <iostream>
+
+int main() {
+	int score = 0;
+	std::cout << "請輸入你的分數：" << std::endl;
+	std::cin >> score;
+	std::cout << "你的分數為：" << score << std::endl;
+	if (score >= 50) {
+		if (score >= 70) {
+			std::cout << "沒關就是開了" << std::endl;
+		}
+		else if (score >= 60) {
+			std::cout << "666這個入是桂" << std::endl;
+		}
+		else {
+			std::cout << "厲害呀" << std::endl;
+		}
+	}
+	else if (score >= 40) {
+		std::cout << "不錯呢" << std::endl;
+	}
+	else {
+		std::cout << "給你機會你不中用啊" << std::endl;
+	}
+	std::cin.get();
+	return 0;
+}
