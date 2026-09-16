@@ -1,0 +1,22 @@
+#include <iostream>
+
+int main() {
+	int arr[2][3] = {
+		{1,2,3},
+		{4,5,6}
+	};
+	std::cout << "二維數組占用的內存空間為：" << sizeof(arr) << std::endl;
+	std::cout << "二維數組第一行占用內存空間為：" << sizeof(arr[0]) << std::endl;
+	std::cout << "二維數組第一個元素占用內存空間為：" << sizeof(arr[0][0]) << std::endl;
+	std::cout << "二維數組的行數為：" << sizeof(arr)/sizeof(arr[0]) << std::endl;
+	std::cout << "二維數組的列數為：" << sizeof(arr)[0] / sizeof(arr[0][0]) << std::endl;
+
+	std::cout << "二維數組的首地址為：" << (int)arr << std::endl;
+	std::cout << "二維數組第一行的首地址為：" << (int)arr[0] << std::endl;
+	std::cout << "二維數組第二行的首地址為：" << (int)arr[1] << std::endl;
+	std::cout << "二維數組第一個元素的首地址為：" << (int)&arr[0][0] << std::endl;
+	std::cout << "二維數組第二個元素的首地址為：" << (int)&arr[0][1] << std::endl;
+
+	std::cin.get();
+	return 0;
+}
