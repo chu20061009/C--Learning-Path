@@ -1,0 +1,16 @@
+#include <iostream>
+
+int main() {
+	
+	int a = 10;
+	int* p = &a;
+	std::cout << "sizeof(int *) = " << sizeof(p) << std::endl;
+	std::cout << "sizeof(int *) = " << sizeof(int *) << std::endl;
+	std::cout << "sizeof(float *) = " << sizeof(float *) << std::endl;
+	std::cout << "sizeof(double *) = " << sizeof(double *) << std::endl;
+	std::cout << "sizeof(char *) = " << sizeof(char *) << std::endl;
+	//在x64系統下，都是8個字節
+
+	std::cin.get();
+	return 0;
+}
