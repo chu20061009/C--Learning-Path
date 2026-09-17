@@ -1,0 +1,10 @@
+#include <iostream>
+
+int main() {
+	
+	int* p = NULL;//空指標，用於給指標變量初始化
+	*p = 100;//空指標是不給訪問的，因為0~255是系統占用的
+	
+	std::cin.get();
+	return 0;
+}
