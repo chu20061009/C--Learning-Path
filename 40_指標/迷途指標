@@ -1,0 +1,10 @@
+#include <iostream>
+
+int main() {
+	
+	int* p = (int *)0x1100;//迷途指標
+	std::cout << *p << std::endl;//盡量避免出現
+	
+	std::cin.get();
+	return 0;
+}
