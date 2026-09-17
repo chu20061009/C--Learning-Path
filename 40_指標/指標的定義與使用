@@ -1,0 +1,18 @@
+#include <iostream>
+
+int main() {
+	
+	int a = 10;//定義指標
+	int* p;//定義指標的語法：數據類型 * 指標變量
+	p = &a;//讓指標紀錄變量a的地址
+	std::cout << "a的地址為：" << &a << std::endl;
+	std::cout << "指標p為：" << p << std::endl;
+
+	*p;//可以透過解引用的方式來找到指標指向的內存，*即解引用
+	*p = 1000;
+	std::cout << "a = " << a << std::endl;
+	std::cout << "p = " << *p << std::endl;
+
+	std::cin.get();
+	return 0;
+}
