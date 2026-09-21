@@ -1,0 +1,36 @@
+#include <iostream>
+
+//1.無參數無返回值
+void test_01(){
+	std::cout << "This is test_01" << std::endl;
+}
+
+//2.有參數無返回值
+void test_02(int a) {
+	std::cout << "This is test_02，a = " << a << std::endl;
+}
+
+//3.無參數有返回值
+int test_03() {
+	std::cout << "This is test_03" << std::endl;
+	return 1000;
+}
+
+//4.有參數有返回值
+int test_04(int a) {
+	std::cout << "This is test_04，a = " << a << std::endl;
+	return a;
+}
+
+int main() {
+
+	test_01();
+	test_02(100);
+	int num1 = test_03();
+	std::cout << "num1 = " << num1 << std::endl;
+	int num2 = test_04(10000);
+	std::cout << "num2 = " << num2 << std::endl;
+
+	std::cin.get();
+	return 0;
+}
