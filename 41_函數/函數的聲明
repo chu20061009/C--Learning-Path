@@ -1,0 +1,31 @@
+#include <iostream>
+
+//函數的聲明可以有多次，但定義只能有一次
+int max(int a, int b);
+int max(int a, int b);
+int max(int a, int b);
+//比較函數，實現兩個整數的比較，返回較大值
+int max(int a, int b){
+	int max;
+	if (a > b) {
+		max = a;
+	}
+	else if (a < b) {
+		max = b;
+	}
+	else {
+		std::cout << "兩數大小相同" << std::endl;
+	}
+	std::cout << "最大值為：" << max << std::endl;
+	return max;//這裡好像可以用三目運算符，直接return max = (a,b)?a:b;就好了
+}
+
+int main() {
+
+	int a = 10;
+	int b = 20;
+	max(a, b);
+
+	std::cin.get();
+	return 0;
+}
