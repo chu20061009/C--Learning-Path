@@ -1,0 +1,32 @@
+#include <iostream>
+
+//值傳遞
+//定義函數，實現兩個數字進行交換函數
+//如果一個函數不需要返回值，聲明的時候可以使用void
+void swap(int num1, int num2) {
+	std::cout << "交換前：" << std::endl;
+	std::cout << "num1 = " << num1 << std::endl;
+	std::cout << "num2 = " << num2 << std::endl;
+
+	int temp = num1;
+	num1 = num2;
+	num2 = temp;
+
+	std::cout << "交換後：" << std::endl;
+	std::cout << "num1 = " << num1 << std::endl;
+	std::cout << "num2 = " << num2 << std::endl;
+
+	return;//不需要返回值時，可以不用寫return什麼
+}
+
+int main() {
+
+	int a = 10;
+	int b = 20;
+	swap(a,b);//num1和num2交換並不會影響a和b
+	std::cout << "a = " << a << std::endl;
+	std::cout << "b = " << b << std::endl;
+	
+	std::cin.get();
+	return 0;
+}
