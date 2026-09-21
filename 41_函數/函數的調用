@@ -1,0 +1,25 @@
+#include <iostream>
+
+int add(int num1, int num2) {
+	int sum = num1 + num2;
+	return sum;
+}
+
+int main() {
+
+	//在main函數中調用add函數
+	int a = 10;
+	int b = 20;
+
+	//函數調用語法：函數名稱 (參數)
+	int c = add(a, b);
+	std::cout << "c = " << c << std::endl;
+
+	a = 100;
+	b = 500;
+	c = add(a, b);
+	std::cout << "c = " << c << std::endl;
+	
+	std::cin.get();
+	return 0;
+}
