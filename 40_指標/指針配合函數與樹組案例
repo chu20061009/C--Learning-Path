@@ -1,0 +1,37 @@
+#include <iostream>
+
+void swap(int &a, int &b) {//交換的程式碼
+	if (a > b) {
+		int temp = a;
+		a = b;
+		b = temp;
+	}
+}
+
+void bubblesort (int * arr, int len){//參數一；數組位置，參數二：數組長度
+	for (int i = 0; i < len; i++) {
+		for (int j = 0; j < len - i - 1; j++) {
+			if (arr[j] > arr[j + 1]) {
+				swap(arr[j], arr[j + 1]);
+			}
+		}
+	}
+}
+
+void print(int * arr, int len){//輸出數組
+	for (int i = 0; i < len; i++) {
+		std::cout << arr[i] << " " << std::endl;
+	}
+}
+
+int main() {
+
+	int arr[10] = {4,3,6,9,1,2,10,8,7,5};//要排序的數組
+	int len = sizeof(arr) / sizeof(arr[0]);//找出數組長度
+	bubblesort(arr, len);
+
+	print(arr, len);
+
+	std::cin.get();
+	return 0;
+}
