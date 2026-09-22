@@ -1,0 +1,25 @@
+#include <iostream>
+
+
+void swap(int *p1, int *p2) {
+	int temp = *p1;
+	*p1 = *p2;
+	*p2 = temp;
+
+	std::cout << "swap a = " << *p1 << std::endl;
+	std::cout << "swap b = " << *p2 << std::endl;
+}
+
+
+int main() {
+
+	int a = 10;
+	int b = 20;
+	swap(&a, &b);//a和b的值會被改變
+
+	std::cout << "a = " << a << std::endl;
+	std::cout << "b = " << b << std::endl;
+
+	std::cin.get();
+	return 0;
+}
