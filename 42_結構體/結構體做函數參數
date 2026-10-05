@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+
+struct student {
+	std::string name;
+	int age;
+	int score;
+};
+
+void print(struct student s) {
+	s.score = 0;//不會改變main函數裡的值
+	std::cout << "學生姓名：" << s.name << " 學生年齡：" << s.age << " 學生分數：" << s.score << std::endl;
+}
+
+void print2(struct student* p) {
+	p->score = 0;//會改變main函數裡的值
+	std::cout << "學生姓名：" << p->name << " 學生年齡：" << p->age << " 學生分數：" << p->score << std::endl;
+}
+
+int main(){
+	student s = { "張三", 18, 100 };
+
+	print(s);
+	print2(&s);
+
+	std::cout << "學生姓名：" << s.name << " 學生年齡：" << s.age << " 學生分數：" << s.score << std::endl;
+
+	std::cin.get();
+	return 0;
+}
