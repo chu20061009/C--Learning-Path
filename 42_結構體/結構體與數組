@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+
+struct student {
+	std::string name;
+	int age;
+	int score;
+};
+
+int main(){
+
+	student stuArray[3] = {
+		{"張三",18,100},
+		{"李四",19,80},
+		{"王五",20,60}
+	};
+	stuArray[2].name = "趙六";
+	stuArray[2].age = 21;
+	stuArray[2].score = 40;
+	for (int i = 0; i < 3; i++) {
+		std::cout << "姓名：" << stuArray[i].name << " 年齡：" << stuArray[i].age << " 分數：" << stuArray[2].score << std::endl;
+	}
+
+	std::cin.get();
+	return 0;
+}
