@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+
+struct student {
+	std::string name;
+	int age;
+	int score;
+};
+
+struct teacher {
+	int id;
+	std::string name;
+	int age;
+	struct student stu;
+
+};
+
+int main(){
+	student s1 = { "張三", 18, 100 };
+
+	teacher t1 = { 1000,"老張", 50,s1 };
+
+	std::cout << "老師編號：" << t1.id << " 老師姓名：" << t1.name << " 老師年齡：" << t1.age << " 輔導學生：" << t1.stu.name << std::endl;
+	std::cout << "學生姓名：" << s1.name << " 學生年齡：" << s1.age << " 學生分數：" << s1.score << std::endl;
+
+	std::cin.get();
+	return 0;
+}
