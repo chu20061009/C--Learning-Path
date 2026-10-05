@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+
+struct student {
+	std::string sname;
+	int score;
+};
+struct teacher {
+	std::string tname;
+	struct student sArray[5];
+};
+void allocateSpace(struct teacher tArray[], int len) {//給老師進行賦值
+	std::string nameseed = "ABCDE";
+	for (int i = 0; i < len; i++) {
+		tArray[i].tname = "Teacher_";
+		tArray[i].tname += nameseed[i];
+
+		for (int j = 0; j < 5; j++) {
+			tArray[i].sArray[j].sname = "Student_";
+			tArray[i].sArray[j].sname += nameseed[i];
+			int random = rand() % 61 + 40;
+			tArray[i].sArray[j].score = random;
+		}
+	}
+}
+void printInfo(struct teacher tArray[], int len) {
+	for (int i = 0; i < len; i++) {
+		std::cout << "老師姓名：" << tArray[i].tname << std::endl;
+		for (int j = 0; j < 5; j++) {
+			std::cout << "\t學生姓名：" << tArray[i].sArray[j].sname << "考試分數：" << tArray[i].sArray[j].score << std::endl;
+		}
+	}
+}
+
+int main(){
+	srand((unsigned)time(NULL));
+	struct teacher tArray[3];
+	int len = sizeof(tArray) / sizeof(tArray[0]);
+	allocateSpace(tArray, len);
+	printInfo(tArray,len);
+
+
+	std::cin.get();
+	return 0;
+}
