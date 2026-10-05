@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+
+//創建學生數據類型，包含：姓名、年齡、分數
+//語法：struct 類型名稱 {成員列表}
+struct student {
+	std::string name;
+	int age;
+	int score;
+};
+
+//透過學生類型創建具體學生
+//語法：1.struct student s1
+//2.struct student s2 = {...}
+int main(){
+
+	struct student s1;//這裡的struct可以省略
+	s1.name = "張三";//要有一個.
+	s1.age = 18;
+	s1.score = 100;
+
+	std::cout << "姓名：" << s1.name << " 年齡：" << s1.age << " 分數：" << s1.score << std::endl;
+
+	struct student s2 = { "李四",19,80 };
+	std::cout << "姓名：" << s2.name << " 年齡：" << s2.age << " 分數：" << s2.score << std::endl;
+
+	std::cin.get();
+	return 0;
+}
