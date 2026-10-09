@@ -1,0 +1,48 @@
+#include <iostream>
+
+void swap(int a, int b) {
+	int temp = a;
+	a = b;
+	b = temp;
+	std::cout << "a =" << a << std::endl;
+	std::cout << "b =" << b << std::endl;
+}
+
+void swap02(int* a, int* b) {
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+	std::cout << "a =" << *a << std::endl;
+	std::cout << "b =" << *b << std::endl;
+}
+
+void swap03(int& a, int& b) { //引用傳遞，形參會修飾實參
+	int temp = a;
+	a = b;
+	b = temp;
+	std::cout << "a =" << a << std::endl;
+	std::cout << "b =" << b << std::endl;
+}
+
+int main(){
+	int a = 10;
+	int b = 20;
+	swap(a, b);
+	std::cout << "a =" << a << std::endl;
+	std::cout << "b =" << b << "\n" << std::endl;
+
+	int a2 = 10;
+	int b2 = 20;
+	swap02(&a2, &b2);
+	std::cout << "a =" << a2 << std::endl;
+	std::cout << "b =" << b2 << "\n" << std::endl;
+	
+	int a3 = 10;
+	int b3 = 20;
+	swap03(a3, b3);
+	std::cout << "a =" << a3 << std::endl;
+	std::cout << "b =" << b3 << "\n" << std::endl;
+
+	std::cin.get();
+	return 0;
+}
