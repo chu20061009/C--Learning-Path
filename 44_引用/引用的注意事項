@@ -1,0 +1,16 @@
+#include <iostream>
+
+int main(){
+	int a = 10;
+	int& b = a;
+	//int& b;是錯誤的，要初始化
+	int c = 20;
+	//引用一旦初始化，就不能更改
+	b = c;//這是賦值，不是更改
+	std::cout << "a =" << a << std::endl;
+	std::cout << "b =" << b << std::endl;
+	std::cout << "c =" << c << std::endl;
+
+	std::cin.get();
+	return 0;
+}
