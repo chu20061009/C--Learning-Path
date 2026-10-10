@@ -1,0 +1,32 @@
+#include <iostream>
+
+//權限種類：
+//1.公共，public	成員類內可以訪問，類外可以訪問
+//2.保護，protected 成員類內不可以訪問，類外不可以訪問
+//3.私人，private   成員類內不可以訪問，類外不可以訪問
+
+class Person {
+public:
+	std::string Name;
+protected:
+	std::string Car;
+private:
+	int Password;
+
+public:
+	void func() {
+		Name = "小夏";
+		Car = "瑪莎拉蒂";
+		Password = 1009;
+	}
+};
+
+int main(){
+	
+	Person p1;
+	p1.Name = "張三";
+	//p1.Car = "本田";保護權限，類外不可訪問
+
+	std::cin.get();
+	return 0;
+}
