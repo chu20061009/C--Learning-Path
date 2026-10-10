@@ -1,0 +1,48 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <string>
+
+/*成員屬性設置為私有
+1.可以自己設置讀寫權限
+2.對於寫可以檢測數據有效性
+*/
+
+class Person {
+public:
+	void setname(std::string name) {//設置姓名
+		Name = name;
+	}
+	std::string getName() {
+		return Name;
+	}
+
+	int getAge() {
+		return age;
+	}
+
+	void setCar(std::string car) {
+		Car = car;
+	}
+
+private:
+	std::string Name;//姓名，可讀可寫
+	int age = 18;//年齡 只讀
+	std::string Car;//車 只寫
+
+};
+
+
+int main(){
+	Person p1;
+	p1.setname("張三");//設置姓名，可以
+	std::cout << "姓名為：" << p1.getName() << std::endl;//讀取姓名，可以
+
+	//p1.setAge = 20;//設置年齡，不可以
+	std::cout << "年齡為：" << p1.getAge() << std::endl;//讀取年齡，可以
+
+	p1.setCar("本田");//設置車，可以
+	//std::cout << "車為：" << p1.getCar() << std::endl;讀取車，不可以
+
+	std::cin.get();
+	return 0;
+}
