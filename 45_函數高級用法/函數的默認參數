@@ -1,0 +1,16 @@
+#include <iostream>
+
+int func(int a, int b = 20, int c = 30) {
+	return a + b + c;
+}
+
+
+int main(){
+	int a = 10;
+	std::cout << func(a) << std::endl;
+	std::cout << func(a,30,40) << std::endl;
+
+
+	std::cin.get();
+	return 0;
+}
