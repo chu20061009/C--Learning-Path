@@ -1,0 +1,14 @@
+#include <iostream>
+
+void func(int a, int) {//就占一個位置，之後課程才用的到，先知道
+	std::cout << "This is func test" << std::endl;
+}
+
+
+int main(){
+	func(10, 10);
+
+
+	std::cin.get();
+	return 0;
+}
