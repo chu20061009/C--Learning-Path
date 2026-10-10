@@ -1,0 +1,19 @@
+#include <iostream>
+
+class c1 {//默認是私人權限
+	int name;
+};
+
+struct c2 {//默認是公共權限
+	int name;
+};
+
+int main(){
+	c1 c1;
+	//c1.name = 1;類外無法訪問
+	c2 c2;
+	c2.name = 2;
+
+	std::cin.get();
+	return 0;
+}
