@@ -1,0 +1,24 @@
+#include <iostream>
+
+//設計一個圓，求他的周長
+//公式：2*pi*r
+const double pi = 3.141492653589793;
+
+class circle {
+public://權限：公共權限
+	int r;//屬性：半徑
+	double circumference() {//行為：獲取周長
+		return 2 * r * pi;
+	};
+};
+
+int main(){
+	
+	//透過圓，創造一個具體的圓
+	circle circle1;
+	circle1.r = 10;//給其屬性進行賦值
+	std::cout << "圓的周長為：" << circle1.circumference() << std::endl;
+
+	std::cin.get();
+	return 0;
+}
