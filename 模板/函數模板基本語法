@@ -1,0 +1,51 @@
+#include<iostream>
+
+void swapInt(int &a, int &b) {//交換整型
+	int tempInt = a;
+	a = b;
+	b = tempInt;
+}
+void swapDouble(double &a, double &b) {//交換浮點數
+	double tempDouble = a;
+	a = b;
+	b = tempDouble;
+}
+
+//函數模板
+template<typename T>//聲明一個模板，告訴編譯器後面代碼中緊跟著的T不要報錯，T為一個通用的數據類型
+void mySwap(T& a, T& b) {
+	T temp = a;
+	a = b;
+	b = temp;
+}
+
+void test01() {
+	int a = 10;
+	int b = 20;
+	swapInt(a, b);
+	std::cout << "a =" << a << std::endl;
+	std::cout << "b =" << b << std::endl;
+
+	double c = 3.14;
+	double d = 2.71;
+	swapDouble(c, d);
+	std::cout << "c =" << c << std::endl;
+	std::cout << "d =" << d << std::endl;
+
+	//利用函數模板交換，有兩種方式可以使用函數模型推導
+	//1.自動類型推導
+	mySwap(a, b);
+	std::cout << "a =" << a << std::endl;
+	std::cout << "b =" << b << std::endl;
+	//2.顯示指定類型
+	mySwap<double>(c, d);
+	std::cout << "c =" << c << std::endl;
+	std::cout << "d =" << d << std::endl;
+}
+
+int main(){
+	test01();
+
+	std::cin.get();
+	return 0;
+}
