@@ -1,0 +1,32 @@
+#include<iostream>
+#include<string>
+
+template<class NameType, class AgeType>
+class Person {
+public:
+	Person(NameType name, AgeType age) {
+		this->Name = name;
+		this->Age = age;
+	}
+	NameType Name;
+	AgeType Age;
+
+
+
+	void showPerson() {
+		std::cout << "姓名：" << this->Name << "	年齡：" << this->Age << std::endl;
+	}
+};
+
+	void test01() {
+		Person<std::string, int> p1("張三", 40);
+		p1.showPerson();
+	}
+
+
+int main() {
+	test01();
+
+	std::cin.get();
+	return 0;
+}
