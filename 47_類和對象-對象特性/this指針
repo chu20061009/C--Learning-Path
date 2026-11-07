@@ -1,0 +1,31 @@
+#include<iostream>
+
+class Person {
+public:
+	Person(int age) {
+		this->age = age;//this 指針指向的是被調用的成員(P1)函數的所屬對象
+	}
+	int age;
+
+	Person& PersonAgeAdd(Person& p) {
+		this->age += p.age;
+		return *this;////返回對象本身用 return *this，this指向p2的指針，而*this指向的是p2的本體
+	}
+
+};
+
+//1.解決名稱衝突
+void test01(){
+	Person p1(18);
+	std::cout << p1.age << std::endl;
+	Person p2(20);
+	p2.PersonAgeAdd(p1).PersonAgeAdd(p1).PersonAgeAdd(p1);//鏈式編程思想
+	std::cout << "p2.PersonAgeAdd = " << p2.age << std::endl;
+	
+}
+
+int main() {
+	test01();
+	std::cin.get();
+	return 0;
+}
