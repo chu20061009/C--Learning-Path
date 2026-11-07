@@ -1,0 +1,44 @@
+#include<iostream>
+#include<string>
+
+//靜態成員變量
+class Person {
+public:
+	//所有對象都共用一段數據
+	//編譯階段就分配內存
+	//類內聲明，類外開始初始化操作
+	static int m_Age;
+
+	//靜態成員變量也有訪問權限
+private:
+	static int m_Car;//類外無法訪問
+};
+
+int Person::m_Age = 20;
+int Person::m_Car = 1;
+
+void test01(){
+	Person p;
+	std::cout << p.m_Age << std::endl;
+
+	Person p2;
+	Person::m_Age = 30;
+	std::cout << p.m_Age << std::endl;
+}
+
+void test02() {
+	//靜態成員變量不屬於某個對象上，所有對象都共享一段數據
+	//靜態成員有兩種訪問方式
+	//1.通過對象
+	Person p3;
+	std::cout << p3.m_Age << std::endl;
+	//2.通過類名
+	std::cout << Person::m_Age << std::endl;
+}
+
+int main() {
+	test01();
+	test02();
+	std::cin.get();
+	return 0;
+}
