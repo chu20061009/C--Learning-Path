@@ -1,0 +1,33 @@
+#include<iostream>
+
+//靜態成員函數
+//所有對象共享同一個函數
+//靜態成員函數只能訪問靜態成員變量
+
+class Person {
+public:
+	static void func() {
+		std::cout << "static void func的調用" << std::endl;
+		m_Age = 0;
+		//my_Age = 100;無法訪問，報錯
+	}
+	static int m_Age;
+	int my_Age;
+};
+
+
+void test01() {
+	//1.通過對象訪問
+	Person p;
+	p.func();
+	//2.通過類名訪問
+	Person::func();
+}
+
+
+int main() {
+	test01();
+	
+	std::cin.get();
+	return 0;
+}
