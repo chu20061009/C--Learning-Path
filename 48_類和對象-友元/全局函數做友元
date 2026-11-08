@@ -1,0 +1,35 @@
+#include<iostream>
+#include<string>
+
+class Home {
+public:
+
+	friend void m_bro(Home* Home);//全局函數m_bro可以訪問Home的私有成員
+
+	std::string m_livingroom;//客廳
+
+	Home() {
+		m_livingroom = "客廳";
+		m_bedroom = "臥室";
+	}
+private:
+	std::string m_bedroom;//臥室
+
+};
+
+//全局函數
+void m_bro(Home *Home) {
+	std::cout << "好兄弟正在訪問客廳" << Home->m_livingroom << std::endl;
+	std::cout << "好兄弟正在訪問臥室" << Home->m_bedroom << std::endl;
+}
+
+void test01() {
+	Home Home;
+	m_bro(&Home);
+}
+
+int main() {
+	test01();
+	std::cin.get();
+	return 0;
+}
